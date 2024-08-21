@@ -248,7 +248,7 @@ void* flow(void* arg) {
 			continue;
 		}
 
-		// 2) Target's ARP
+		// 2) Target's ARP Broadcast
 		struct EthArpPacket* target_broadcast_packet = (struct EthArpPacket*)packet;
 		if (ntohs(target_broadcast_packet->eth_.type_) == EthHdr::Arp &&
 			ntohs(target_broadcast_packet->arp_.op_) == ArpHdr::Request &&
